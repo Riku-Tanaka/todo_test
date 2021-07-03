@@ -34,9 +34,10 @@ export default Vue.extend({
   },
   methods: {
     // todoの追加
-    addTodo(e): void {
-      todosStore.add(e.target.value)
-      e.target.value = ''
+    addTodo(e: MouseEvent): void {
+      const target = e.target as HTMLInputElement
+      todosStore.add(target.value)
+      target.value = ''
     },
     // todoの削除
     remove(todo: Todo) {
